@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        .title{
+            overflow: auto;
+        }
+        .listBox{
+            visibility: hidden;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div onclick="onClickTest()" class="title" >
+                <span >Part2-CSS</span><span>↓</span>
+            </div>
+            <div class="listBox" id="listId">
+                <div>시작하기1</div>
+                <div>시작하기2</div>
+                <div>시작하기3</div>
+                <div>시작하기4</div>
+                <div>시작하기5</div>
+                <div>시작하기6</div>
+            </div>
+        </div>
+        <input type="text" id="target">
+        <script>
+            var listH = document.getElementById("listId").clientHeight;
+            console.log(listH);
+            function onClickTest(){
+                if(listH == 0){
+                    listH = document.getElementById("listId").style.height = "200px";
+                    console.log(listH);
+                } else if (listH == "200px") {
+                    listH = document.getElementById("listId").style.height = "0px";
+                }
+            }
+            var t = document.getElementById("target");
+            t.addEventListener("click", function(event){
+                alert("event!");
+            })
+        </script>
+    </body>
+</html>
